@@ -1,0 +1,99 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            33:04:bb:23:28:31:c2:c7:d0:42:2c:2d:71:1e:92:f4:0e:ff:ec:25
+        Signature Algorithm: ecdsa-with-SHA384
+        Issuer: O=sigstore.dev, CN=sigstore-intermediate
+        Validity
+            Not Before: Sep 28 15:43:43 2026 GMT
+            Not After : Sep 28 15:53:43 2026 GMT
+        Subject: 
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:ba:17:f1:ca:1c:09:f1:c1:6d:63:8d:15:39:fe:
+                    99:bf:d8:55:11:6e:3f:be:f8:56:2e:38:94:43:c7:
+                    d7:77:88:93:6a:9f:73:c6:f4:63:a8:00:4b:c5:8d:
+                    8c:53:cd:49:04:0e:f9:93:0f:da:fd:80:be:69:67:
+                    e7:b9:85:b9:77
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature
+            X509v3 Extended Key Usage: 
+                Code Signing
+            X509v3 Subject Key Identifier: 
+                78:0E:22:54:32:6F:AA:0F:09:55:F9:D6:C8:D1:2C:D2:0D:DE:60:18
+            X509v3 Authority Key Identifier: 
+                DF:D3:E9:CF:56:24:11:96:F9:A8:D8:E9:28:55:A2:C6:2E:18:64:3F
+            X509v3 Subject Alternative Name: critical
+                URI:https://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main
+            1.3.6.1.4.1.57264.1.1: 
+                https://token.actions.githubusercontent.com
+            1.3.6.1.4.1.57264.1.2: 
+                push
+            1.3.6.1.4.1.57264.1.3: 
+                1b3f22c15ad6fe25edc4eb4802ef99a379b82054
+            1.3.6.1.4.1.57264.1.4: 
+                build-sign-attest
+            1.3.6.1.4.1.57264.1.5: 
+                sonujha78/novapay-supply-chain
+            1.3.6.1.4.1.57264.1.6: 
+                refs/heads/main
+            1.3.6.1.4.1.57264.1.8: 
+                .+https://token.actions.githubusercontent.com
+            1.3.6.1.4.1.57264.1.9: 
+                .ihttps://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main
+            1.3.6.1.4.1.57264.1.10: 
+                .(1b3f22c15ad6fe25edc4eb4802ef99a379b82054
+            1.3.6.1.4.1.57264.1.11: 
+                .github-hosted
+            1.3.6.1.4.1.57264.1.12: 
+                .1https://github.com/sonujha78/novapay-supply-chain
+            1.3.6.1.4.1.57264.1.13: 
+                .(1b3f22c15ad6fe25edc4eb4802ef99a379b82054
+            1.3.6.1.4.1.57264.1.14: 
+                ..refs/heads/main
+            1.3.6.1.4.1.57264.1.15: 
+                .
+1392543863
+            1.3.6.1.4.1.57264.1.16: 
+                ..https://github.com/sonujha78
+            1.3.6.1.4.1.57264.1.17: 
+                ..236746062
+            1.3.6.1.4.1.57264.1.18: 
+                .ihttps://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main
+            1.3.6.1.4.1.57264.1.19: 
+                .(1b3f22c15ad6fe25edc4eb4802ef99a379b82054
+            1.3.6.1.4.1.57264.1.20: 
+                ..push
+            1.3.6.1.4.1.57264.1.21: 
+                .Uhttps://github.com/sonujha78/novapay-supply-chain/actions/runs/36445390298/attempts/1
+            1.3.6.1.4.1.57264.1.22: 
+                ..public
+            1.3.6.1.4.1.57264.1.24: 
+                .Lrepo:sonujha78@236746062/novapay-supply-chain@1392543863:ref:refs/heads/main
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : DD:3D:30:6A:C6:C7:11:32:63:19:1E:1C:99:67:37:02:
+                                A2:4A:5E:B8:DE:3C:AD:FF:87:8A:72:80:2F:29:EE:8E
+                    Timestamp : Sep 28 15:43:43.298 2026 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:F5:4E:D5:4B:A2:33:93:42:11:84:E8:
+                                92:37:BA:F0:C0:5A:E3:4F:9C:ED:3C:E8:9C:7B:7E:F7:
+                                DA:87:3C:73:FA:02:20:2D:D7:D2:F1:CF:60:AB:43:52:
+                                82:D6:0D:BD:3A:CD:55:04:D1:5D:77:C8:4D:79:E4:0A:
+                                83:87:4D:3C:56:1A:97
+    Signature Algorithm: ecdsa-with-SHA384
+    Signature Value:
+        30:64:02:30:1b:31:bd:af:93:c0:bc:f7:c8:d0:e9:e2:9b:f2:
+        a1:26:27:40:6f:6f:d7:f3:7d:d9:45:23:97:2b:6a:6f:4a:d0:
+        fd:68:f7:3f:15:a3:24:d3:3a:63:89:7c:c1:cc:c3:46:02:30:
+        5c:a6:57:a0:c7:8f:49:f8:f1:a6:21:ca:11:41:65:49:3c:b6:
+        39:f3:c5:55:df:a8:52:7b:c1:70:35:fe:b9:a2:4e:45:3c:b7:
+        4b:a5:c7:43:be:b7:96:70:1f:84:f7:ad

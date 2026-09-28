@@ -23,7 +23,7 @@ Securing the CI/CD software supply chain for a payments-API microservice using
 - [x] Task 2: Hardened CI pipeline
 - [x] Task 3: SBOM and vulnerability gate
 - [x] Task 4: Keyless signing with cosign
-- [ ] Task 5: SLSA provenance
+- [x] Task 5: SLSA provenance
 - [ ] Task 6: Kyverno admission enforcement
 - [ ] Task 7: Attack simulation
 - [ ] Task 8: Report and executive summary

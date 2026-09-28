@@ -1,0 +1,12 @@
+# Risk-acceptance policy
+# Every ignore entry MUST have: CVE id, justification (comment), owner and an expiry date.
+# Expired entries must be removed or re-approved in a PR. Review monthly.
+# Example (keep commented until a real accepted risk exists):
+#
+# ignore:
+#   # CVE-YYYY-NNNN | pkg: <name> | owner: <who> | expires: YYYY-MM-DD
+#   # Justification: not reachable, component unused at runtime
+#   - vulnerability: CVE-YYYY-NNNN
+#     package:
+#       name: <name>
+ignore: []

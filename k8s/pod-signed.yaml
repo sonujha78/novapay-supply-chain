@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: novapay-signed
+  namespace: novapay-demo
+spec:
+  containers:
+    - name: novapay-api
+      image: ghcr.io/sonujha78/novapay-supply-chain@sha256:275b64a4f899e1e2e17bf3826d50e7b95026f3ba3eb1b315a1f3ac054c61de17

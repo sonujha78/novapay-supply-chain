@@ -141,3 +141,22 @@ jobs:
 
       - name: Attest SBOM (SPDX)
         run: cosign attest --yes --type spdxjson --predicate sbom.spdx.json "${IMAGE}@${DIGEST}"
+
+  provenance:
+    needs: [build, sign]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      id-token: write        # OIDC token for keyless attestation signing
+      attestations: write    # publish to GitHub's attestation store
+      packages: write        # attach a copy to the GHCR image
+      contents: read
+    env:
+      DIGEST: ${{ needs.build.outputs.digest }}
+    steps:
+      - name: Generate and attest SLSA build provenance
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-name: ${{ env.IMAGE }}
+          subject-digest: ${{ env.DIGEST }}
+          push-to-registry: true

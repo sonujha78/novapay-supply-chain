@@ -140,7 +140,9 @@ jobs:
         run: cosign sign --yes --registry-referrers-mode=legacy "${IMAGE}@${DIGEST}"
 
       - name: Attest SBOM (SPDX)
-        run: cosign attest --yes --registry-referrers-mode=legacy --type spdxjson --predicate sbom.spdx.json "${IMAGE}@${DIGEST}"
+        env:
+          COSIGN_DOCKER_MEDIA_TYPES: "1"
+        run: cosign attest --yes --type spdxjson --predicate sbom.spdx.json "${IMAGE}@${DIGEST}"
 
   provenance:
     needs: [build, sign]

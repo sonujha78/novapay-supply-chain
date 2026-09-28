@@ -1,0 +1,3 @@
+High	fixed	9
+Low	fixed	1
+Medium	fixed	2

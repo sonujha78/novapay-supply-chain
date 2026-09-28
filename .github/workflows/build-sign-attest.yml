@@ -98,7 +98,7 @@ jobs:
           severity-cutoff: critical
           only-fixed: true
           output-format: json
-          output-path: grype-report.json
+          output-file: grype-report.json
           config: .grype.yaml
 
       - name: Upload SBOM and scan report

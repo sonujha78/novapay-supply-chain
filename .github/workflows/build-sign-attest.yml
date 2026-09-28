@@ -97,8 +97,8 @@ jobs:
           fail-build: true
           severity-cutoff: critical
           only-fixed: true
-          output-format: table
-          output-path: grype-report.txt
+          output-format: json
+          output-path: grype-report.json
           config: .grype.yaml
 
       - name: Upload SBOM and scan report
@@ -108,5 +108,5 @@ jobs:
           name: sbom-and-scan
           path: |
             sbom.spdx.json
-            grype-report.txt
-          if-no-files-found: warn
+            grype-report.json
+          if-no-files-found: error

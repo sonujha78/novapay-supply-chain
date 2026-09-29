@@ -1,0 +1,10 @@
+=== Our policy's imageReferences pattern matches by repo path, but every Pod spec in this repo deploys by DIGEST (see k8s/pod-signed.yaml), never by tag ===
+
+=== Proof: current tag :121d668... and its digest ===
+Name:      ghcr.io/sonujha78/novapay-supply-chain:121d668609df0977dbe18ec60fbf716b1ded5d85
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:0597f007d7130ed80bc1f15ccd32547701c0520c58a49e46c3436f4decf06009
+           
+Manifests: 
+
+=== If this tag is overwritten in the registry tomorrow, a tag-based deploy (image: ...:121d668...) would silently start running whatever new content that tag points to — no way to detect drift. Our Pod manifests never reference a tag, only image@sha256:<digest>, so an overwritten tag has zero effect on what actually deploys. ===

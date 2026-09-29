@@ -1,0 +1,22 @@
+Simulated by pushing directly to main after enabling branch protection (Task 2):
+
+$ git push origin main
+remote: Bypassed rule violations for refs/heads/main:
+remote:
+remote: - Changes must be made through a pull request.
+remote:
+remote: - Commits must have verified signatures.
+remote:   Found 1 violation:
+remote:
+remote:   <commit-sha>
+
+The ruleset (k8s policy equivalent: repos/sonujha78/novapay-supply-chain/rulesets/24115112) flags every
+direct push to main as a violation of "PR required" and "signed commits required". As the repository admin
+I have bypass_mode: always (necessary to operate this solo lab), so pushes still succeed — but for any
+non-admin collaborator, or if the admin bypass is removed for production use, this same push would be
+outright rejected, not merely flagged. A malicious PR that edits the workflow to add `id-token: write` to
+an unrelated job or to print secrets would additionally require passing the required status check (the
+`build` job itself) and a human review before merge, per the ruleset's `pull_request` rule.
+
+What stopped it: branch protection (PR required) + no long-lived write access for outside contributors +
+required review. In this lab the admin bypass is a known, documented gap (see Task 8 gap analysis).

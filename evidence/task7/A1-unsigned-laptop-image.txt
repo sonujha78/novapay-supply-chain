@@ -1,0 +1,7 @@
+$ kubectl run novapay-unsigned --image=ghcr.io/sonujha78/novapay-supply-chain:121d668609df0977dbe18ec60fbf716b1ded5d85 -n novapay-demo
+Error from server: admission webhook "mutate.kyverno.svc-fail" denied the request:
+
+resource Pod/novapay-demo/novapay-unsigned was blocked due to the following policies
+
+verify-signed-images:
+  verify-cosign-keyless: 'failed to verify image ghcr.io/sonujha78/novapay-supply-chain:121d668609df0977dbe18ec60fbf716b1ded5d85: .attestors[0].entries[0].keyless: no signatures found'

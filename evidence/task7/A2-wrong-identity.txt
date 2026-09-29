@@ -1,0 +1,6 @@
+Error from server: error when creating "k8s/pod-attack-a2.yaml": admission webhook "mutate.kyverno.svc-fail" denied the request: 
+
+resource Pod/novapay-demo/novapay-attack-a2 was blocked due to the following policies 
+
+verify-signed-images:
+  verify-cosign-keyless: 'failed to verify image ghcr.io/sonujha78/novapay-supply-chain@sha256:714bcaba2b993d3359837284e1a56915052f8c1bb9ed60deef63c6c435707f58: .attestors[0].entries[0].keyless: subject mismatch: expected https://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main, received https://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/attack-a2-untrusted-ref'

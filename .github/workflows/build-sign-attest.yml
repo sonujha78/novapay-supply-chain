@@ -137,7 +137,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Sign image (keyless, by digest)
-        run: cosign sign --yes --registry-referrers-mode=legacy "${IMAGE}@${DIGEST}"
+        env:
+          COSIGN_DOCKER_MEDIA_TYPES: "1"
+        run: cosign sign --yes "${IMAGE}@${DIGEST}"
 
       - name: Attest SBOM (SPDX)
         env:

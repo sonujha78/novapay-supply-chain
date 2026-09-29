@@ -6,4 +6,4 @@ metadata:
 spec:
   containers:
     - name: novapay-api
-      image: ghcr.io/sonujha78/novapay-supply-chain@sha256:275b64a4f899e1e2e17bf3826d50e7b95026f3ba3eb1b315a1f3ac054c61de17
+      image: ghcr.io/sonujha78/novapay-supply-chain@sha256:c2aef30af311a4fc3daa87dd1bb52d7b00a475ac176c825094984db0517c087c

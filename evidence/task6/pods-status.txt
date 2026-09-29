@@ -1,0 +1,19 @@
+NAME             READY   STATUS    RESTARTS   AGE   IP            NODE                        NOMINATED NODE   READINESS GATES
+novapay-signed   1/1     Running   0          93s   10.244.0.11   novapay-lab-control-plane   <none>           <none>
+
+--- signed pod describe (tail) ---
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  93s   default-scheduler  Successfully assigned novapay-demo/novapay-signed to novapay-lab-control-plane
+  Normal  Pulling    93s   kubelet            spec.containers{novapay-api}: Pulling image "ghcr.io/sonujha78/novapay-supply-chain@sha256:c2aef30af311a4fc3daa87dd1bb52d7b00a475ac176c825094984db0517c087c"
+  Normal  Pulled     80s   kubelet            spec.containers{novapay-api}: Successfully pulled image "ghcr.io/sonujha78/novapay-supply-chain@sha256:c2aef30af311a4fc3daa87dd1bb52d7b00a475ac176c825094984db0517c087c" in 12.952s (12.952s including waiting). Image size: 3193381 bytes.
+  Normal  Created    80s   kubelet            spec.containers{novapay-api}: Created container: novapay-api
+  Normal  Started    80s   kubelet            spec.containers{novapay-api}: Started container novapay-api

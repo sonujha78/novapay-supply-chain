@@ -1,0 +1,113 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"kyverno.io/v1","kind":"ClusterPolicy","metadata":{"annotations":{},"name":"verify-signed-images"},"spec":{"background":false,"rules":[{"match":{"any":[{"resources":{"kinds":["Pod"]}}]},"name":"verify-cosign-keyless","verifyImages":[{"attestors":[{"count":1,"entries":[{"keyless":{"issuer":"https://token.actions.githubusercontent.com","rekor":{"url":"https://rekor.sigstore.dev"},"subject":"https://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main"}}]}],"imageReferences":["ghcr.io/sonujha78/novapay-supply-chain*"],"mutateDigest":true,"required":true}]}],"validationFailureAction":"Enforce","webhookTimeoutSeconds":30}}
+  creationTimestamp: "2026-09-28T18:53:33Z"
+  generation: 1
+  name: verify-signed-images
+  resourceVersion: "1840"
+  uid: 3794f1bd-a18a-406a-8516-0836bb9ba858
+spec:
+  admission: true
+  background: false
+  emitWarning: false
+  rules:
+  - match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    name: verify-cosign-keyless
+    skipBackgroundRequests: true
+    verifyImages:
+    - attestors:
+      - count: 1
+        entries:
+        - keyless:
+            issuer: https://token.actions.githubusercontent.com
+            rekor:
+              url: https://rekor.sigstore.dev
+            subject: https://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main
+          signatureAlgorithm: sha256
+      imageReferences:
+      - ghcr.io/sonujha78/novapay-supply-chain*
+      mutateDigest: true
+      required: true
+      useCache: true
+      verifyDigest: true
+  validationFailureAction: Enforce
+  webhookTimeoutSeconds: 30
+status:
+  autogen:
+    rules:
+    - match:
+        any:
+        - resources:
+            kinds:
+            - apps/v1/DaemonSet
+            - apps/v1/Deployment
+            - batch/v1/Job
+            - apps/v1/ReplicaSet
+            - v1/ReplicationController
+            - apps/v1/StatefulSet
+        resources: {}
+      name: autogen-verify-cosign-keyless
+      skipBackgroundRequests: true
+      verifyImages:
+      - attestors:
+        - count: 1
+          entries:
+          - keyless:
+              issuer: https://token.actions.githubusercontent.com
+              rekor:
+                url: https://rekor.sigstore.dev
+              subject: https://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main
+            signatureAlgorithm: sha256
+        imageReferences:
+        - ghcr.io/sonujha78/novapay-supply-chain*
+        mutateDigest: true
+        required: true
+        useCache: true
+        validate: {}
+        verifyDigest: true
+    - match:
+        any:
+        - resources:
+            kinds:
+            - batch/v1/CronJob
+        resources: {}
+      name: autogen-cronjob-verify-cosign-keyless
+      skipBackgroundRequests: true
+      verifyImages:
+      - attestors:
+        - count: 1
+          entries:
+          - keyless:
+              issuer: https://token.actions.githubusercontent.com
+              rekor:
+                url: https://rekor.sigstore.dev
+              subject: https://github.com/sonujha78/novapay-supply-chain/.github/workflows/build-sign-attest.yml@refs/heads/main
+            signatureAlgorithm: sha256
+        imageReferences:
+        - ghcr.io/sonujha78/novapay-supply-chain*
+        mutateDigest: true
+        required: true
+        useCache: true
+        validate: {}
+        verifyDigest: true
+  conditions:
+  - lastTransitionTime: "2026-09-28T18:53:33Z"
+    message: Ready
+    reason: Succeeded
+    status: "True"
+    type: Ready
+  rulecount:
+    generate: 0
+    mutate: 0
+    validate: 0
+    verifyimages: 1
+  validatingadmissionpolicy:
+    generated: false
+    message: ""

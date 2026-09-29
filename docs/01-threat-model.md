@@ -24,7 +24,7 @@ SLSA categories: A = Source (submit unauthorized change), B = Source (compromise
 ## 3. Threat Table
 
 | # | Threat | SLSA | Example in this pipeline | L | I | Planned control |
-|---|--------|------|--------------------------|---|---|-----------------|
+|---|--------|------|---------------------------|---|---|------------------|
 | 1 | Unauthorized code merged | A | Attacker or rogue contributor merges malicious code to main | M | H | Branch protection, required reviews, verified commits |
 | 2 | Compromised repo account | B | Maintainer credentials stolen, force-push to main | M | H | 2FA, no force-push, signed commits, audit log |
 | 3 | Malicious workflow change via PR | D | PR edits workflow to print secrets or add `id-token: write` | M | H | `permissions: {}`, CODEOWNERS on `.github/`, required reviews, no `pull_request_target` |

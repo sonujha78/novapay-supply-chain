@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: novapay-attack-a2
+  namespace: novapay-demo
+spec:
+  containers:
+    - name: novapay-api
+      image: ghcr.io/sonujha78/novapay-supply-chain@sha256:714bcaba2b993d3359837284e1a56915052f8c1bb9ed60deef63c6c435707f58

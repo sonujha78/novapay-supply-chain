@@ -26,4 +26,4 @@ Securing the CI/CD software supply chain for a payments-API microservice using
 - [x] Task 5: SLSA provenance
 - [x] Task 6: Kyverno admission enforcement
 - [x] Task 7: Attack simulation
-- [ ] Task 8: Report and executive summary
+- [x] Task 8: Report and executive summary
